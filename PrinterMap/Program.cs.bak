@@ -1,0 +1,48 @@
+﻿using System;
+using System.IO;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Management.Automation;
+using System.Management.Automation.Runspaces;
+using System.Collections.ObjectModel;
+
+
+namespace PrinterMap
+{
+    class Program
+    {
+        private static string[] printersplit;
+        private static string servername;
+        private static string sharename;
+        private static string printershare;
+
+        public static void Main(string[] args)
+        {
+            string path = Directory.GetCurrentDirectory();
+            string scriptDir = path + "printermap.ps1";
+            printersplit = args[0].TrimStart('z','p','r','i','n','t','e','r',':').Split('+');
+            servername = printersplit[0];
+            sharename = Uri.UnescapeDataString(printersplit[1]);
+            printershare = "\\\\" + servername + "\\" + sharename;
+
+            PowerShell ps = PowerShell.Create();
+            ps.AddScript(scriptDir)
+              .AddParameter("server", servername)
+              .AddParameter("printershare", printershare);
+            Collection<PSObject> result = ps.Invoke();
+            foreach (PSObject r in result) { 
+                switch (r.)
+                {
+                    case 0x0:
+                        System.Windows.Forms.MessageBox.Show("Successfully added printer.", "Success", System.Windows.Forms.MessageBoxButtons.OK, System.Windows.Forms.MessageBoxIcon.Information);
+                        break;
+                    case 0x2:
+                }
+            }
+
+            Console.WriteLine(printershare);       
+        }
+    }
+}

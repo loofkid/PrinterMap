@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace PrinterMap
 {
-    public partial class Form1 : Form
+    public partial class AddingPrinter : Form
     {
-        public Form1()
+        public AddingPrinter()
         {
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void AddingPrinter_Load(object sender, EventArgs e)
         {
-            
+
         }
     }
 }

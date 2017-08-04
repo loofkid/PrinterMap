@@ -1,6 +1,6 @@
 ﻿namespace PrinterMap
 {
-    partial class Form1
+    partial class AddingPrinter
     {
         /// <summary>
         /// Required designer variable.
@@ -33,27 +33,26 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(13, 13);
+            this.progressBar1.Location = new System.Drawing.Point(12, 12);
+            this.progressBar1.MarqueeAnimationSpeed = 50;
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(530, 23);
+            this.progressBar1.Size = new System.Drawing.Size(355, 24);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 0;
             this.progressBar1.UseWaitCursor = true;
             // 
-            // Form1
+            // AddingPrinter
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(555, 49);
+            this.ClientSize = new System.Drawing.Size(379, 48);
             this.ControlBox = false;
             this.Controls.Add(this.progressBar1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Adding Printer";
+            this.Name = "AddingPrinter";
+            this.ShowIcon = false;
+            this.Text = "Adding Printer...";
             this.UseWaitCursor = true;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.AddingPrinter_Load);
             this.ResumeLayout(false);
 
         }
